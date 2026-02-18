@@ -1,5 +1,5 @@
-import 'package:glow_kit/glow_effect.dart';
 import 'package:flutter/material.dart';
+import 'package:glow_kit/glow_kit.dart';
 
 void main() {
   runApp(const MyApp());
