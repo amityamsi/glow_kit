@@ -1,7 +1,7 @@
 name: glow_kit
 homepage: https://github.com/amityamsi/glow_kit
 description: A customizable Flutter glow animation package that adds smooth, animated background glow effects to any widget with multiple shape support and high-performance rendering.
-version: 1.0.0
+version: 1.0.1
 # repository: https://github.com/amityamsi/glow_kit
 # issue_tracker: https://github.com/amityamsi/glow_kit/issues
 

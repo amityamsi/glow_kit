@@ -1,8 +1,23 @@
+/// A highly customizable animated glow effect for Flutter widgets.
+///
+/// The [GlowEffect] widget paints animated glow layers behind its [child]
+/// using a variety of shapes such as circles, rectangles, stars,
+/// polygons, decorative shapes, and more.
+///
+/// This implementation is lightweight and leverages a [CustomPainter]
+/// with animation support for smooth and efficient rendering.
+library;
+
 import 'dart:math' as math;
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
+/// Defines the shape used to render the glow effect.
+///
+/// Different shape types allow you to create custom visual styles,
+/// including circular glows, polygon-based glows, stars,
+/// decorative badges, and modern UI shapes.
 enum GlowShapeType {
   rectangle,
   roundedRect,
@@ -42,10 +57,29 @@ enum GlowShapeType {
   ribbon,
 }
 
-/// A widget that adds a glowing effect around its child.
+/// A widget that adds an animated glowing effect around its [child].
+///
+/// The glow expands and fades over time based on animation progress.
+/// You can customize the glow's color, shape, duration, curve,
+/// repetition behavior, and expansion radius.
+///
+/// Example:
+/// ```dart
+/// GlowEffect(
+///   glowColor: Colors.blue,
+///   glowShape: GlowShapeType.circle,
+///   child: Icon(Icons.favorite),
+/// )
+/// ```
 class GlowEffect extends StatefulWidget {
+  /// Creates a [GlowEffect].
+  ///
+  /// The [child] widget is required.
+  ///
+  /// If [glowShape] is set to [GlowShapeType.circle],
+  /// [glowBorderRadius] must be null.
   const GlowEffect({
-    Key? key,
+    super.key,
     required this.child,
     this.glowCount = 2,
     this.glowColor = Colors.white,
@@ -59,25 +93,59 @@ class GlowEffect extends StatefulWidget {
     this.glowRadiusFactor = 0.7,
     this.repeatPauseDuration,
     this.endGlowRadius,
-  })  : assert(
+  }) : assert(
           !(glowShape == GlowShapeType.circle && glowBorderRadius != null),
           'GlowEffect: You cannot use circle shape with glowBorderRadius. '
           'Either remove glowBorderRadius or use a rounded/rectangle shape.',
-        ),
-        super(key: key);
+        );
 
+  /// The widget that the glow effect will be painted around.
   final Widget child;
+
+  /// Number of glow layers rendered around the child.
+  ///
+  /// Higher values create a softer and more diffused glow.
   final int glowCount;
+
+  /// The color of the glow effect.
   final Color glowColor;
+
+  /// Shape used for rendering the glow.
   final GlowShapeType glowShape;
+
+  /// Optional border radius used when the glow shape supports rounded corners.
+  ///
+  /// Must be null when using [GlowShapeType.circle].
   final BorderRadius? glowBorderRadius;
+
+  /// Duration of a single glow animation cycle.
   final Duration duration;
+
+  /// Optional delay before the animation starts.
   final Duration? startDelay;
+
+  /// Whether the glow animation should run.
+  ///
+  /// If false, the glow remains static.
   final bool animate;
+
+  /// Whether the glow animation should repeat after completing.
   final bool repeat;
+
+  /// Animation curve used for glow expansion.
   final Curve curve;
+
+  /// Controls how far the glow expands relative to its base radius.
+  ///
+  /// Higher values result in a larger glow spread.
   final double glowRadiusFactor;
+
+  /// Optional pause duration between repeated animations.
   final Duration? repeatPauseDuration;
+
+  /// Optional explicit maximum radius for the glow expansion.
+  ///
+  /// If null, the radius is calculated using [glowRadiusFactor].
   final double? endGlowRadius;
 
   @override

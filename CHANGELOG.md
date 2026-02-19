@@ -7,7 +7,28 @@ and this project adheres to Semantic Versioning (https://semver.org/).
 
 ---
 
-## [1.0.0] – 2026-02-18 🚀
+## 1.0.1 - 2026-02-19
+
+### 📚 Documentation Update
+
+This release improves pub.dev scoring and developer experience by enhancing API documentation.
+
+### ✨ Improved
+
+- Added comprehensive Dartdoc comments for public API elements.
+- Documented `GlowEffect`, constructor, and public properties.
+- Improved overall documentation coverage to meet pub.dev requirements.
+- Enhanced IDE tooltips and API discoverability.
+
+### 🧹 Internal
+
+- No functional changes.
+- No breaking changes.
+- No API changes.
+
+---
+
+## 1.0.0 - 2026-02-18
 
 ### 🎉 Initial Stable Release
 
