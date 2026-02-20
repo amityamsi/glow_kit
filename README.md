@@ -1,30 +1,32 @@
 # ✨ Glow Kit
 
-> A powerful, customizable, and high-performance Flutter glow animation package supporting 20+ shapes.
+A powerful, customizable, high-performance Flutter glow animation package  
+supporting 20+ beautiful shapes with smooth, modern animations.
+----
+## 🎥 Preview
 
-Glow Kit provides a flexible `GlowEffect` widget that adds smooth, animated glow effects to any widget with full customization and optimized rendering using `CustomPainter`.
+https://raw.githubusercontent.com/amityamsi/glow_kit/main/src/app.gif
+---
+
+## ✨ Features
+
+- Smooth animated glow effects  
+- 20+ built-in shapes  
+- Fully customizable  
+- Optimized with CustomPainter  
+- High FPS performance  
+- Null-safe  
+- Flutter 3+ compatible  
 
 ---
 
-## 🚀 Why Glow Kit?
-
-✔ Smooth & modern glow animations  
-✔ 20+ built-in shapes  
-✔ Highly customizable  
-✔ Optimized for performance  
-✔ Easy to use  
-✔ Null-safe  
-✔ Flutter 3+ compatible  
-
----
-
-# 📦 Installation
+## 📦 Installation
 
 Add this to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  glow_kit: ^1.0.0
+  glow_kit: ^1.0.1
 ```
 
 Then run:
@@ -35,7 +37,7 @@ flutter pub get
 
 ---
 
-# 📥 Import
+## 📥 Import
 
 ```dart
 import 'package:glow_kit/glow_kit.dart';
@@ -43,9 +45,7 @@ import 'package:glow_kit/glow_kit.dart';
 
 ---
 
-# ⚡ Quick Start
-
-The simplest way to use `GlowEffect`:
+## ⚡ Quick Start
 
 ```dart
 GlowEffect(
@@ -58,202 +58,120 @@ GlowEffect(
 )
 ```
 
-That’s it! 🎉
+That’s it. ✨
 
 ---
 
-# 🧩 Complete Example
+## 🎥 Preview
 
-Below is a full runnable example:
+> Add a GIF inside `/assets/demo.gif` and reference it below.
 
-```dart
-import 'package:flutter/material.dart';
-import 'package:glow_kit/glow_kit.dart';
-
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: GlowDemoPage(),
-    );
-  }
-}
-
-class GlowDemoPage extends StatefulWidget {
-  const GlowDemoPage({super.key});
-
-  @override
-  State<GlowDemoPage> createState() => _GlowDemoPageState();
-}
-
-class _GlowDemoPageState extends State<GlowDemoPage> {
-  bool _animate = true;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.black,
-      body: Center(
-        child: GlowEffect(
-          glowColor: Colors.purple,
-          glowCount: 3,
-          duration: const Duration(seconds: 2),
-          startDelay: const Duration(milliseconds: 500),
-          repeatPauseDuration: const Duration(milliseconds: 300),
-          glowRadiusFactor: 0.8,
-          animate: _animate,
-          repeat: true,
-          curve: Curves.easeInOut,
-          shape: GlowShape.hexagon,
-          child: const Icon(
-            Icons.favorite,
-            size: 80,
-            color: Colors.white,
-          ),
-        ),
-      ),
-    );
-  }
-}
+```markdown
+![Glow Kit Demo](https://raw.githubusercontent.com/yourusername/glow_kit/main/assets/demo.gif)
 ```
 
----
-
-# 🎨 Supported Shapes
-
-Glow Kit supports more than 20 shapes:
-
-## 🔷 Basic Shapes
-- Rectangle  
-- RoundedRectangle  
-- Circle  
-- Square  
-- Oval  
-- Stadium  
-- Capsule  
-
-## 🔺 Polygon Shapes
-- Triangle  
-- Diamond  
-- Pentagon  
-- Hexagon  
-- Octagon  
-
-## ⭐ Star Shapes
-- StarFive  
-- StarSix  
-
-## 💖 Decorative Shapes
-- Heart  
-- Cloud  
-- Bubble  
-- Badge  
-- Shield  
-
-## 🧩 Modern UI Shapes
-- CutCorner  
-- BeveledRect  
-- Ticket  
-- Ribbon  
+After publishing, it will render automatically on pub.dev.
 
 ---
 
-# ⚙️ Properties
-
-| Property            | Type        | Description                              |
-|---------------------|------------|------------------------------------------|
-| `glowColor`         | Color       | Color of the glow                        |
-| `glowCount`         | int         | Number of glow layers                    |
-| `glowRadiusFactor`  | double      | Controls glow expansion scale            |
-| `endGlowRadius`     | double?     | Explicit final glow radius               |
-| `duration`          | Duration    | Animation duration                       |
-| `startDelay`        | Duration    | Delay before animation starts            |
-| `repeatPauseDuration` | Duration  | Pause between animation loops            |
-| `animate`           | bool        | Start or stop animation                  |
-| `repeat`            | bool        | Repeat animation                         |
-| `curve`             | Curve       | Animation curve                          |
-| `shape`             | GlowShape   | Select glow shape                        |
-
----
-
-# 🛠 Advanced Usage Example
+## 🧩 Full Example
 
 ```dart
 GlowEffect(
-  glowColor: Colors.cyan,
-  glowCount: 4,
-  glowRadiusFactor: 1.0,
-  duration: const Duration(seconds: 3),
-  curve: Curves.elasticOut,
+  glowColor: Colors.purple,
+  glowCount: 3,
+  duration: const Duration(seconds: 2),
+  startDelay: const Duration(milliseconds: 500),
+  repeatPauseDuration: const Duration(milliseconds: 300),
+  glowRadiusFactor: 0.8,
+  animate: true,
   repeat: true,
-  shape: GlowShape.starFive,
-  child: Container(
-    padding: const EdgeInsets.all(20),
-    decoration: BoxDecoration(
-      color: Colors.black,
-      borderRadius: BorderRadius.circular(12),
-    ),
-    child: const Text(
-      "Glow Kit",
-      style: TextStyle(
-        color: Colors.white,
-        fontSize: 24,
-        fontWeight: FontWeight.bold,
-      ),
-    ),
+  curve: Curves.easeInOut,
+  shape: GlowShape.hexagon,
+  child: const Icon(
+    Icons.favorite,
+    size: 80,
+    color: Colors.white,
   ),
 )
 ```
 
 ---
 
-# 🎯 Best Practices
+## 🎨 Supported Shapes
 
-- Use darker backgrounds for better glow visibility.
-- Keep `glowCount` between 2–4 for optimal performance.
-- Adjust `glowRadiusFactor` carefully to avoid excessive blur.
-- Use `animate: false` for static glow effects.
+### Basic
+Rectangle • RoundedRectangle • Circle • Square • Oval • Stadium • Capsule  
 
----
+### Polygon
+Triangle • Diamond • Pentagon • Hexagon • Octagon  
 
-# 📌 Performance Notes
+### Stars
+StarFive • StarSix  
 
-Glow Kit is optimized using `CustomPainter` to ensure:
+### Decorative
+Heart • Cloud • Bubble • Badge • Shield  
 
-- Minimal rebuilds
-- Smooth animations
-- High FPS performance
-- Efficient glow rendering
-
----
-
-# 🤝 Contributing
-
-Contributions are welcome!
-
-If you find bugs or want to request features:
-- Open an issue
-- Submit a pull request
+### Modern UI
+CutCorner • BeveledRect • Ticket • Ribbon  
 
 ---
 
-# 📄 License
+## ⚙️ Properties
 
-This project is licensed under the MIT License.
+| Property | Type | Description |
+|----------|------|------------|
+| glowColor | Color | Glow color |
+| glowCount | int | Number of glow layers |
+| glowRadiusFactor | double | Glow expansion scale |
+| endGlowRadius | double? | Final glow radius |
+| duration | Duration | Animation duration |
+| startDelay | Duration | Delay before start |
+| repeatPauseDuration | Duration | Pause between loops |
+| animate | bool | Enable/disable animation |
+| repeat | bool | Repeat animation |
+| curve | Curve | Animation curve |
+| shape | GlowShape | Select glow shape |
 
 ---
 
-# 💙 Support
+## 🚀 Performance
 
-If you like this package, consider giving it a ⭐ on pub.dev and GitHub.
+Glow Kit uses CustomPainter for:
+
+- Minimal rebuilds  
+- Smooth animations  
+- Efficient blur rendering  
+- High performance on all devices  
 
 ---
 
-**Glow beautifully. Animate smoothly. Build professionally. ✨**
+## 🎯 Best Practices
+
+- Use darker backgrounds for better glow visibility  
+- Keep glowCount between 2–4  
+- Avoid excessive radius scaling  
+- Use animate: false for static glow  
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome!  
+Feel free to open issues or submit pull requests.
+
+---
+
+## 💙 Support
+
+If this package helps your project:
+
+- ⭐ Like it on pub.dev  
+- ⭐ Star it on GitHub  
+- 📢 Share it with the Flutter community  
+
+---
+
+## 📄 License
+
+MIT License
